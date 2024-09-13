@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sinchana R - Graphic Designer Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5F5;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #002B5B;
+            color: #FFF;
+            text-align: center;
+            padding: 50px 0;
+            font-family: 'Times New Roman', serif;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Page Flipping Effect */
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: #FFF;
+            transform-origin: right center;
+            transform: rotateY(90deg);
+            transition: transform 1s ease-in-out;
+            backface-visibility: hidden;
+        }
+
+        .page.active {
+            transform: rotateY(0deg);
+        }
+
+        /* Page Content Styles */
+        .page-content {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        h2 {
+            font-family: 'Times New Roman', serif;
+            font-size: 36px;
+            color: #FF6F61;
+            text-align: center;
+        }
+
+        .section {
+            background-color: #FFF;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #FF6F61;
+            color: #FFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #FF4A3B;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sinchana R</h1>
+        <p>Creative Graphic Designer with a Passion for Visual Storytelling</p>
+    </header>
+
+    <!-- Page 1 (Profile Section) -->
+    <div class="page active" id="page1">
+        <div class="page-content">
+            <h2>Profile</h2>
+            <div class="section">
+                <h3>Sinchana R</h3>
+                <p>Email: sinchanaraghunath@gmail.com</p>
+                <p>Phone: +91 6360107686</p>
+                <p>Date of Birth: 18/11/2003</p>
+                <p>Profile: To give my best as an individual, to be a good team leader, and to focus on the organization's growth by utilizing my knowledge, skills, and abilities.</p>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="nextPage(2)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 (Education Section) -->
+    <div class="page" id="page2">
+        <div class="page-content">
+            <h2>Education</h2>
+            <div class="section">
+                <h3>BCA - MESMSPS First Grade Degree College</h3>
+                <p>CGPA: 8.5 (2021 - 2024)</p>
+                <h3>PU - Brigade PU College</h3>
+                <p>Percentage: 83% (2019 - 2021)</p>
+                <h3>SSLC - Poorna Prajana Education Centre</h3>
+                <p>Percentage: 82.5% (2018 - 2019)</p>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevPage(1)">Previous</button>
+                <button onclick="nextPage(3)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 (Projects Section) -->
+    <div class="page" id="page3">
+        <div class="page-content">
+            <h2>Projects</h2>
+            <div class="section">
+                <h3>Restaurant Website</h3>
+                <p>A simple restaurant website created using HTML and CSS.</p>
+            </div>
+            <div class="section">
+                <h3>Travel Booking Website</h3>
+                <p>A travel booking site designed with HTML and CSS.</p>
+            </div>
+            <div class="section">
+                <h3>E-Dairy Management System</h3>
+                <p>A dynamic system developed using PHP, MySQL, HTML, and CSS to streamline dairy farm operations.</p>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevPage(2)">Previous</button>
+                <button onclick="nextPage(4)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4 (Skills Section) -->
+    <div class="page" id="page4">
+        <div class="page-content">
+            <h2>Skills</h2>
+            <div class="section">
+                <p>MS Office, Front-End Development, PHP, Python, Adobe Photoshop, Canva, Web Development</p>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevPage(3)">Previous</button>
+                <button onclick="nextPage(5)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5 (Contact Section) -->
+    <div class="page" id="page5">
+        <div class="page-content">
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required><br>
+                <input type="email" placeholder="Your Email" required><br>
+                <textarea placeholder="Your Message" rows="5" required></textarea><br>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="nav-buttons">
+                <button onclick="prevPage(4)">Previous</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function nextPage(pageNum) {
+            document.querySelector('.page.active').classList.remove('active');
+            document.getElementById('page' + pageNum).classList.add('active');
+        }
+
+        function prevPage(pageNum) {
+            document.querySelector('.page.active').classList.remove('active');
+            document.getElementById('page' + pageNum).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
